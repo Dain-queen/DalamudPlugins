@@ -170,7 +170,7 @@
     "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/GatherBuddyReborn/latest.zip",
     "TestingAssemblyVersion": "7.5.6.1",
     "IsTestingExclusive": false,
-    "LastUpdate": 1793754829,
-    "Changelog": "설치된 GatherBuddyReborn 폴더에 압축을 풀어 덮어씌우세요. (원본 버전: 7.5.6.1)"
+    "LastUpdate": 1794294358,
+    "Changelog": "원본 7.5.6.1 한국어판. 제작 계산기(raphael-cli.exe) 포함 — 원본 없이 이것만 설치해도 모든 기능이 동작합니다. 설치·업데이트는 Dain-queen/DalamudPlugins 저장소(repo.json)로 하세요."
   }
 ]
