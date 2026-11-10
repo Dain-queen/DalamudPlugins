@@ -3,7 +3,7 @@
     "Author": "Dain-queen",
     "Name": "NoSolicitingKR",
     "InternalName": "NoSolicitingKR",
-    "AssemblyVersion": "1.0.1.0",
+    "AssemblyVersion": "1.0.1.1",
     "Description": "직접 등록한 단어(또는 정규식)가 들어간 채팅 메시지를 채팅창에 보이지 않게 숨깁니다.\n기본으로 걸러지는 항목은 없으며, 등록한 단어만 걸러냅니다.\n채널별로 적용 여부를 고를 수 있고, 원하면 파티 모집 목록에도 적용할 수 있습니다.\n숨긴 메시지는 '숨긴 메시지' 탭에서 확인할 수 있습니다.",
     "ApplicableVersion": "any",
     "Tags": [
@@ -24,10 +24,10 @@
     "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/NoSolicitingKR/latest.zip",
     "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/NoSolicitingKR/latest.zip",
     "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/NoSolicitingKR/latest.zip",
-    "TestingAssemblyVersion": "1.0.1.0",
+    "TestingAssemblyVersion": "1.0.1.1",
     "IsTestingExclusive": false,
-    "LastUpdate": 1794286102,
-    "Changelog": "- **다른 플러그인이 띄우는 메시지도 거를 수 있게 했습니다.** (예: BossMod Reborn의 `[BMRAI] AI menu is now enabled`)\r\n  - 채널 탭에 '기타' 묶음 추가: 플러그인 메시지(디버그), 에코, 시스템 메시지, 그 밖의 모든 채널.\r\n  - 새로 추가된 채널은 처음부터 켜져 있습니다. 등록한 단어가 들어간 메시지만 숨기므로 다른 메시지에는 영향이 없습니다.\r\n- 숨긴 메시지 기록에 '그 밖의 모든 채널'로 걸린 메시지는 `채널 번호`로 표시됩니다."
+    "LastUpdate": 1794286497,
+    "Changelog": "- **플러그인 메시지(디버그) 채널 번호가 잘못돼 있던 문제 수정.** 1.0.1.0에서는 BossMod 메시지가 '그 밖의 모든 채널'로 걸러지고 있었습니다. 이제 '플러그인 메시지 (디버그)' 채널로 걸러집니다. 오류 메시지 채널도 추가했습니다.\r\n- **'그 밖의 모든 채널 (전투 메시지 등)'은 기본으로 꺼집니다.** 업데이트하면 한 번 꺼진 상태로 바뀝니다. 필요하면 채널 탭에서 다시 켜세요.\r\n- **대괄호 태그를 정규식으로 등록하면 경고합니다.** 예: 정규식으로 `[BMRAI]` 를 등록하면 B·M·R·A·I 중 한 글자라도 들어간 메시지가 전부 숨겨집니다. 새로 추가할 때는 막고, 이미 등록된 단어에는 노란 경고를 보여줍니다."
   },
   {
     "Author": "Dain-queen",
