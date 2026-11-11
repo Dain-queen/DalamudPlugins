@@ -177,7 +177,7 @@
         "Author": "Dain-queen",
         "Name": "AutoMahjongKR",
         "InternalName": "AutoMahjongKR",
-        "AssemblyVersion": "1.0.0.1",
+        "AssemblyVersion": "1.0.0.2",
         "Description": "도마 마작에서 손패·버림패·도라를 읽고 버릴 패를 계산합니다.\n추천 모드: 버릴 패만 알려줍니다.\n자동 모드: 패 버리기, 리치 선언, 쯔모·론, 울기 넘기기, 결과 화면 넘기기를 대신 합니다.\n명령어: /amkr",
         "ApplicableVersion": "any",
         "Tags": [
@@ -196,9 +196,9 @@
         "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
         "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
-        "TestingAssemblyVersion": "1.0.0.1",
+        "TestingAssemblyVersion": "1.0.0.2",
         "IsTestingExclusive": false,
-        "LastUpdate": 1794362984,
-        "Changelog": "- 패 버리기·리치·쯔모·론·패스를 실제 클릭과 같은 방식(창의 클릭 이벤트)으로 보내도록 바꿈.\r\n  - 이전에는 신호만 보내서 서버에는 반영돼도 마작 창은 \"아직 안 누름\"으로 알고 있었음 → 내 차례가 끝나도 초읽기가 돌고, 리치를 했는데 리치 버튼이 그대로 남던 문제 수정.\r\n- 클릭이 반영되지 않으면(버튼이 그대로 있거나 차례가 안 넘어가면) 예전 방식의 신호로 한 번 더 보냄.\r\n- 혼자 있는 자패는 역이 안 되는 바람패부터 버림.\r\n- `/amkr dump` 에 손패 칸·선택지 버튼의 클릭 이벤트 정보 추가 (문제 확인용)."
+        "LastUpdate": 1794363564,
+        "Changelog": "- 문제 확인용 기록 추가: 마작 창 상태가 바뀔 때마다, 그리고 마작 창이 닫힐 때 마지막 상태·손패 수·선택지를 `/xllog` 에 남김 (대국이 갑자기 끝나는 원인 확인용)."
     }
 ]
