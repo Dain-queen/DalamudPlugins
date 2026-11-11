@@ -177,7 +177,7 @@
         "Author": "Dain-queen",
         "Name": "AutoMahjongKR",
         "InternalName": "AutoMahjongKR",
-        "AssemblyVersion": "1.0.0.15",
+        "AssemblyVersion": "1.0.0.16",
         "Description": "도마 마작에서 손패·버림패·도라를 읽고 버릴 패를 계산합니다.\n추천 모드: 버릴 패만 알려줍니다.\n자동 모드: 패 버리기, 리치 선언, 쯔모·론, 울기 넘기기, 결과 화면 넘기기를 대신 합니다.\n명령어: /amkr",
         "ApplicableVersion": "any",
         "Tags": [
@@ -196,9 +196,9 @@
         "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
         "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
-        "TestingAssemblyVersion": "1.0.0.15",
+        "TestingAssemblyVersion": "1.0.0.16",
         "IsTestingExclusive": false,
-        "LastUpdate": 1794367700,
-        "Changelog": "- 조작 없음 내보내기 방지에 난타전 플러그인(KeyboundBrawlerChat)과 같은 방식 추가: 마작 중 40초마다 게임 창에 Shift 를 눌렀다 뗀 신호를 보냄 (다른 창이 앞에 있어도 됨).\r\n  1.0.0.14의 조작 없음 타이머 초기화와 함께 둘 다 동작. 설정 \"조작 없음으로 내보내지지 않게 하기\" 로 같이 켜고 끔.\r\n- \"도구 · 로그\" 칸에 잠수 방지 상태·다음 신호까지 남은 시간·\"지금 신호 보내기\" 버튼 추가."
+        "LastUpdate": 1794368075,
+        "Changelog": "- 다른 사람 차례를 기다리는 동안(상태 15) \"모르는 선택지\" 로 잘못 표시되던 것 수정 → \"다른 플레이어 차례\" 로 표시. (입력은 원래도 보내지 않았음)"
     }
 ]
