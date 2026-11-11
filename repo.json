@@ -172,5 +172,33 @@
     "IsTestingExclusive": false,
     "LastUpdate": 1794294358,
     "Changelog": "원본 7.5.6.1 한국어판. 제작 계산기(raphael-cli.exe) 포함 — 원본 없이 이것만 설치해도 모든 기능이 동작합니다. 설치·업데이트는 Dain-queen/DalamudPlugins 저장소(repo.json)로 하세요."
+  },
+  {
+    "Author": "Dain-queen",
+    "Name": "AutoMahjongKR",
+    "InternalName": "AutoMahjongKR",
+    "AssemblyVersion": "1.0.0.0",
+    "Description": "도마 마작에서 손패·버림패·도라를 읽고 버릴 패를 계산합니다.\n추천 모드: 버릴 패만 알려줍니다.\n자동 모드: 패 버리기, 리치 선언, 쯔모·론, 울기 넘기기, 결과 화면 넘기기를 대신 합니다.\n명령어: /amkr",
+    "ApplicableVersion": "any",
+    "Tags": [
+      "mahjong",
+      "도마 마작",
+      "마작",
+      "gold saucer"
+    ],
+    "DalamudApiLevel": 15,
+    "LoadRequiredState": 0,
+    "LoadSync": false,
+    "CanUnloadAsync": false,
+    "LoadPriority": 0,
+    "Punchline": "도마 마작 자동 타패·리치·쯔모 (한국 서버)",
+    "AcceptsFeedback": false,
+    "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
+    "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
+    "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
+    "TestingAssemblyVersion": "1.0.0.0",
+    "IsTestingExclusive": false,
+    "LastUpdate": 1794360570,
+    "Changelog": "- 첫 버전.\r\n- 한섭 클라이언트(Dalamud 15.0.3.9) 기준으로 도마 마작 창을 읽음: 손패, 모든 버림패, 도라 표시패, 공개된 울기 패, 상대 리치.\r\n- 버릴 패 계산: 샹텐 수 → 남은 유효패 장수 → 도라·역패 보존 순으로 고름. 상대가 리치하면 현물·스지 위주로 수비.\r\n- 추천 모드: 창에 버릴 패와 다른 후보를 보여 줌 (입력은 보내지 않음).\r\n- 자동 모드: 패 버리기, 텐파이 시 리치 선언, 쯔모·론, 울기(퐁·치·깡) 넘기기, 결과 화면 넘기기.\r\n- 명령어 `/amkr`, `/amkr auto`, `/amkr suggest`, `/amkr off`, `/amkr dump`."
   }
 ]

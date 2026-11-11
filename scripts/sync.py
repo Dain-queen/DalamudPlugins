@@ -26,6 +26,7 @@ PLUGINS = [
     ("keybound_brawler_chat", None),
     ("Stylist-ilvl-KR", "Stylist (한글·아이템 레벨 제한)"),
     ("GatherBuddyReborn-KR", "GatherBuddy Reborn (한글)"),
+    ("AutoMahjongKR", None),
 ]
 
 
