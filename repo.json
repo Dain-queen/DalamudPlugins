@@ -177,7 +177,7 @@
         "Author": "Dain-queen",
         "Name": "AutoMahjongKR",
         "InternalName": "AutoMahjongKR",
-        "AssemblyVersion": "1.0.0.4",
+        "AssemblyVersion": "1.0.0.6",
         "Description": "도마 마작에서 손패·버림패·도라를 읽고 버릴 패를 계산합니다.\n추천 모드: 버릴 패만 알려줍니다.\n자동 모드: 패 버리기, 리치 선언, 쯔모·론, 울기 넘기기, 결과 화면 넘기기를 대신 합니다.\n명령어: /amkr",
         "ApplicableVersion": "any",
         "Tags": [
@@ -196,9 +196,9 @@
         "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
         "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
-        "TestingAssemblyVersion": "1.0.0.4",
+        "TestingAssemblyVersion": "1.0.0.6",
         "IsTestingExclusive": false,
-        "LastUpdate": 1794364773,
-        "Changelog": "- 게임 튕김 수정: 1.0.0.1부터 패를 고를 때 보내던 \"마우스 올리기\" 이벤트를 뺌.\r\n  실제 마우스는 다른 곳에 있는데 패 위에 올린 상태로 남아서, 패가 바뀐 뒤 게임이 사라진 패를 읽다가 튕겼음 (크래시 3번 모두 같은 위치).\r\n  패 고르기는 1.0.0.0 처럼 신호로, 버리기만 실제 클릭으로 보냄.\r\n- 선택지(리치·패스 등) 버튼 클릭은 맞는 방식을 찾을 때까지 끄고 신호로 보냄."
+        "LastUpdate": 1794365191,
+        "Changelog": "- 새 국이 시작될 때(특히 내가 동가일 때) 패가 다 열리기 전에 타패해서 화면이 멈추던 문제 수정.\r\n  다음 국 화면에서 대국으로 넘어온 뒤 최소 4.5초, 그리고 손패가 1.2초 동안 바뀌지 않을 때(14장 다 보일 때)부터 첫 타패를 시작함."
     }
 ]
