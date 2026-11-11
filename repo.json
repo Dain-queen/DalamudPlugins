@@ -177,7 +177,7 @@
         "Author": "Dain-queen",
         "Name": "AutoMahjongKR",
         "InternalName": "AutoMahjongKR",
-        "AssemblyVersion": "1.0.0.12",
+        "AssemblyVersion": "1.0.0.14",
         "Description": "도마 마작에서 손패·버림패·도라를 읽고 버릴 패를 계산합니다.\n추천 모드: 버릴 패만 알려줍니다.\n자동 모드: 패 버리기, 리치 선언, 쯔모·론, 울기 넘기기, 결과 화면 넘기기를 대신 합니다.\n명령어: /amkr",
         "ApplicableVersion": "any",
         "Tags": [
@@ -196,9 +196,9 @@
         "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
         "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
-        "TestingAssemblyVersion": "1.0.0.12",
+        "TestingAssemblyVersion": "1.0.0.14",
         "IsTestingExclusive": false,
-        "LastUpdate": 1794366912,
-        "Changelog": "- 1.0.0.11의 \"패가 다 들어왔는지\" 확인이 4초가 지나도 안 풀리면 그냥 진행 (판정이 틀려서 아예 안 버리는 일 방지)."
+        "LastUpdate": 1794367480,
+        "Changelog": "- 마작 중 손을 안 대고 있으면 \"진행 의사 없음\"으로 내보내지던 문제 수정: 마작 창이 열려 있는 동안 게임의 조작 없음 타이머를 5초마다 초기화함 (설정 \"조작 없음으로 내보내지지 않게 하기\", 기본 켜짐. 모드가 \"끄기\"면 동작 안 함).\r\n- \"최근 동작\"도 설정처럼 접었다 펼 수 있게 함."
     }
 ]
