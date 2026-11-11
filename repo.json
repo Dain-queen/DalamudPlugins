@@ -177,7 +177,7 @@
         "Author": "Dain-queen",
         "Name": "AutoMahjongKR",
         "InternalName": "AutoMahjongKR",
-        "AssemblyVersion": "1.0.0.16",
+        "AssemblyVersion": "1.0.0.17",
         "Description": "도마 마작에서 손패·버림패·도라를 읽고 버릴 패를 계산합니다.\n추천 모드: 버릴 패만 알려줍니다.\n자동 모드: 패 버리기, 리치 선언, 쯔모·론, 울기 넘기기, 결과 화면 넘기기를 대신 합니다.\n명령어: /amkr",
         "ApplicableVersion": "any",
         "Tags": [
@@ -196,9 +196,9 @@
         "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
         "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
-        "TestingAssemblyVersion": "1.0.0.16",
+        "TestingAssemblyVersion": "1.0.0.17",
         "IsTestingExclusive": false,
-        "LastUpdate": 1794368075,
-        "Changelog": "- 다른 사람 차례를 기다리는 동안(상태 15) \"모르는 선택지\" 로 잘못 표시되던 것 수정 → \"다른 플레이어 차례\" 로 표시. (입력은 원래도 보내지 않았음)"
+        "LastUpdate": 1794368285,
+        "Changelog": "- 타패 때 패 위에 마우스를 올려 두는 시간을 0.12~0.26초 → 0.35~0.7초로 늘림 (패가 올라오는 연출이 끝나기 전에 클릭해서 창이 잠기는 경우 대비).\r\n- 버리기가 반영되지 않아 다시 시도할 때, 두 번째까지는 실제 클릭으로 다시 보냄 (전에는 바로 신호로 바꿨음).\r\n- 4번 다 실패하면 판 정보를 자동으로 로그에 기록 (/amkr dump 를 안 쳐도 됨)."
     }
 ]
