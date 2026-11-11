@@ -177,7 +177,7 @@
         "Author": "Dain-queen",
         "Name": "AutoMahjongKR",
         "InternalName": "AutoMahjongKR",
-        "AssemblyVersion": "1.0.0.8",
+        "AssemblyVersion": "1.0.0.9",
         "Description": "도마 마작에서 손패·버림패·도라를 읽고 버릴 패를 계산합니다.\n추천 모드: 버릴 패만 알려줍니다.\n자동 모드: 패 버리기, 리치 선언, 쯔모·론, 울기 넘기기, 결과 화면 넘기기를 대신 합니다.\n명령어: /amkr",
         "ApplicableVersion": "any",
         "Tags": [
@@ -196,9 +196,9 @@
         "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
         "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
-        "TestingAssemblyVersion": "1.0.0.8",
+        "TestingAssemblyVersion": "1.0.0.9",
         "IsTestingExclusive": false,
-        "LastUpdate": 1794365991,
-        "Changelog": "- 오야(동가)로 새 국을 시작할 때 화면이 멈추던 문제 다시 수정.\r\n  오야면 패 여는 연출이 끝나기 전에 게임이 \"내 차례\"로 알려 주는데, 1.0.0.6의 4.5초 대기로는 부족해서 연출 중에 버림 → 입력이 무시되고 화면이 멈췄음.\r\n  이제 다음 국 화면이 처음 뜬 때부터 최소 13초가 지나야 첫 타패를 함 (오야가 아닐 때 이 연출은 약 10초)."
+        "LastUpdate": 1794366188,
+        "Changelog": "- 시험용 명령어 `/amkr fire <숫자…>` 추가: 마작 창에 신호를 직접 보냄 (예: 화면이 멈췄을 때 `/amkr fire 9`)."
     }
 ]
