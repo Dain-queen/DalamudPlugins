@@ -1,9 +1,9 @@
 [
     {
-        "Author": "Dain-queen",
+        "Author": "RainStrom",
         "Name": "NoSolicitingKR",
         "InternalName": "NoSolicitingKR",
-        "AssemblyVersion": "1.0.2.0",
+        "AssemblyVersion": "1.0.2.1",
         "Description": "직접 등록한 단어(또는 정규식)가 들어간 채팅 메시지를 채팅창에 보이지 않게 숨깁니다.\n기본으로 걸러지는 항목은 없으며, 등록한 단어만 걸러냅니다.\n채널별로 적용 여부를 고를 수 있고, 원하면 파티 모집 목록에도 적용할 수 있습니다.\n숨긴 메시지는 '숨긴 메시지' 탭에서 확인할 수 있습니다.",
         "ApplicableVersion": "any",
         "Tags": [
@@ -24,10 +24,10 @@
         "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/NoSolicitingKR/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/NoSolicitingKR/latest.zip",
         "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/NoSolicitingKR/latest.zip",
-        "TestingAssemblyVersion": "1.0.2.0",
+        "TestingAssemblyVersion": "1.0.2.1",
         "IsTestingExclusive": false,
-        "LastUpdate": 1794377253,
-        "Changelog": "- **공지 숨기기** 추가 (채널 탭 맨 위, 기본 켜짐). 공지 채널(채널 3)로 오는 메시지를 단어를 등록하지 않아도 전부 숨깁니다. 매 정시 공지, 크리스탈샵 안내, 접속할 때 나오는 계정 보호 안내 등이 여기에 해당합니다.\r\n- 숨긴 공지는 '숨긴 메시지' 탭에 걸린 단어 '공지 숨기기'로 남습니다.\r\n- 채널 목록에 '공지' 채널을 추가했고, 기록에도 '채널 3' 대신 '공지'로 표시됩니다."
+        "LastUpdate": 1794410130,
+        "Changelog": "- 기능 변경 없음. 제작자 표시를 RainStrom으로 바꿨습니다."
     },
     {
         "Author": "Dain-queen",
