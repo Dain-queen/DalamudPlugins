@@ -177,7 +177,7 @@
         "Author": "Dain-queen",
         "Name": "AutoMahjongKR",
         "InternalName": "AutoMahjongKR",
-        "AssemblyVersion": "1.0.0.10",
+        "AssemblyVersion": "1.0.0.11",
         "Description": "도마 마작에서 손패·버림패·도라를 읽고 버릴 패를 계산합니다.\n추천 모드: 버릴 패만 알려줍니다.\n자동 모드: 패 버리기, 리치 선언, 쯔모·론, 울기 넘기기, 결과 화면 넘기기를 대신 합니다.\n명령어: /amkr",
         "ApplicableVersion": "any",
         "Tags": [
@@ -196,9 +196,9 @@
         "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
         "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoMahjongKR/latest.zip",
-        "TestingAssemblyVersion": "1.0.0.10",
+        "TestingAssemblyVersion": "1.0.0.11",
         "IsTestingExclusive": false,
-        "LastUpdate": 1794366638,
-        "Changelog": "- 타패 후 마작 창 입력이 잠겨 화면이 멈추던 문제 수정 (오야 시작·국 중간 모두).\r\n  1.0.0.4부터 패에 \"마우스 올리기\" 없이 클릭만 보내서 창이 입력을 잠갔음. 1.0.0.3까지는 올리기만 하고 \"떼기\"를 안 보내서 튕겼음.\r\n  이제 실제 마우스처럼 올리기 → 클릭 → 떼기를 모두 보냄. 올린 채로 1.5초가 지나거나 내 차례가 끝나면 자동으로 뗌.\r\n- 새 국 첫 타패 대기를 다음 국 화면부터 13초 → 8초로 줄임 (멈춤 원인이 연출 시간이 아니었음)."
+        "LastUpdate": 1794366808,
+        "Changelog": "- 매 차례마다 화면에 패가 다 들어온 뒤에 버림: 뽑은 패가 완전히 보이고, 손패가 0.7초 동안 그대로일 때부터 입력.\r\n  렉 등으로 화면 연출이 늦을 때 연출 중에 버려서 입력이 씹히고 창이 잠기던 문제(다른 사람 눈에도 안 버린 것처럼 보임) 대비. 오야 시작 때만 하던 확인을 모든 차례로 넓힘."
     }
 ]
