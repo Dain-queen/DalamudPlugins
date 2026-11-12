@@ -200,5 +200,34 @@
         "IsTestingExclusive": false,
         "LastUpdate": 1794377068,
         "Changelog": "- 진단용 \"서버로 나가는 패킷 기록\" 추가 (도구 · 로그 칸, 기본 꺼짐): 마작 창이 열려 있을 때 게임이 서버로 보내는 데이터를 로그에 남김. 데이터는 읽기만 하고 바꾸지 않음. 직접 칠 때와 플러그인이 칠 때를 비교하는 용도.\r\n- `/amkr fire` 명령어와 \"신호 보내기\" 칸 제거 (잘못 누르면 서버에 맞지 않는 답이 갈 수 있음).\r\n- 잠수 방지에서 게임 내부 \"콘텐츠 조작 타이머\" 초기화를 뺌 (마작 초읽기와 얽혔을 가능성). Shift 신호와 잠수 타이머 초기화는 유지."
+    },
+    {
+        "Author": "Dain-queen",
+        "Name": "ItemBatchUse",
+        "InternalName": "ItemBatchUse",
+        "AssemblyVersion": "1.0.0.0",
+        "Description": "소지품에서 아이템을 우클릭하면 메뉴에 \"일괄 사용\"이 생깁니다.\n누르면 사용할 개수를 입력하는 창이 뜨고, 시작하면 같은 아이템을 그 횟수만큼 차례대로 사용합니다.\n상자·보물상자·탐사 상자 등을 한꺼번에 열 때 편합니다.\n명령어: /batchuse (설정), /batchuse stop (중지)",
+        "ApplicableVersion": "any",
+        "Tags": [
+            "inventory",
+            "item",
+            "소지품",
+            "일괄 사용",
+            "utility"
+        ],
+        "DalamudApiLevel": 15,
+        "LoadRequiredState": 0,
+        "LoadSync": false,
+        "CanUnloadAsync": false,
+        "LoadPriority": 0,
+        "Punchline": "소지품 우클릭 → 일괄 사용 (상자 여러 개 한 번에 열기)",
+        "AcceptsFeedback": false,
+        "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/ItemBatchUse/latest.zip",
+        "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/ItemBatchUse/latest.zip",
+        "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/ItemBatchUse/latest.zip",
+        "TestingAssemblyVersion": "1.0.0.0",
+        "IsTestingExclusive": false,
+        "LastUpdate": 1794454405,
+        "Changelog": "- 첫 버전.\r\n- 소지품에서 아이템을 우클릭하면 메뉴에 \"일괄 사용\"이 생깁니다.\r\n- 사용할 개수를 입력하면(기본: 가진 개수 전부) 같은 아이템을 그 횟수만큼 차례대로 사용합니다.\r\n- 진행 창에서 진행 상황 확인·중지 가능. `/batchuse stop` 으로도 중지.\r\n- 사용 중 뜨는 예/아니오 확인 창 자동 \"예\" (설정에서 끄기 가능).\r\n- 전투가 시작되거나, 아이템이 다 떨어지거나, 계속 사용되지 않으면 자동으로 멈춥니다."
     }
 ]

@@ -24,6 +24,7 @@ https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/repo.json
 | Stylist (한글·아이템 레벨 제한) | Stylist 한글판 + 직업별 아이템 레벨 범위 제한 |
 | GatherBuddy Reborn (한글) | GatherBuddy Reborn UI 한국어 번역판 |
 | AutoMahjongKR | 도마 마작 자동 타패·리치·쯔모 / 버릴 패 추천 |
+| ItemBatchUse | 소지품 우클릭 → 일괄 사용 (상자 여러 개 한 번에 열기) |
 
 ## 갱신 (관리용)
 
