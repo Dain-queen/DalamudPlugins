@@ -33,7 +33,7 @@
         "Author": "Dain-queen",
         "Name": "PartyFinderPresets",
         "InternalName": "PartyFinderPresets",
-        "AssemblyVersion": "1.0.0.9",
+        "AssemblyVersion": "1.0.1.0",
         "Description": "파티 모집 작성 내용(모집 문구, 임무, 슬롯별 제한 직업, 비밀번호 등)을 양식으로 저장하고 다시 불러옵니다.\n파티 모집 작성 창을 열면 옆에 양식 창이 자동으로 열립니다.",
         "ApplicableVersion": "any",
         "Tags": [
@@ -51,10 +51,10 @@
         "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/PartyFinderPresets/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/PartyFinderPresets/latest.zip",
         "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/PartyFinderPresets/latest.zip",
-        "TestingAssemblyVersion": "1.0.0.9",
+        "TestingAssemblyVersion": "1.0.1.0",
         "IsTestingExclusive": false,
-        "LastUpdate": 1792980980,
-        "Changelog": "- **불러오면 저장해 둔 직업(모집 역할)이 사라지던 문제 수정.**\r\n  - 원인: 작성 창은 직업 아이콘을 모집 정보의 직업 칸에서 바로 읽지 않고, 슬롯마다 따로 있는 \"역할 선택 상태\"를 보고 창을 열 때 직업 칸을 다시 만듭니다. 이 상태를 저장하지 않아서, 창이 열릴 때 이전 상태로 덮어써졌습니다. (1.0.0.8 진단 결과, 직업 칸 값 자체는 그대로였습니다.)\r\n  - 변경: 슬롯별 역할 선택 상태와 그룹별 설정도 함께 저장·복원합니다.\r\n- **1.0.0.8 이하에서 저장한 양식은 직업 정보가 없습니다.** 목록에 노란 안내가 표시되며, 해당 양식으로 모집을 한 번 올린 뒤 **덮어쓰기**로 다시 저장해야 직업이 복원됩니다."
+        "LastUpdate": 1794685066,
+        "Changelog": "- **양식 창 접기 기능 추가.** 창 상단바 오른쪽의 접기 버튼을 누를 때마다 3단계로 바뀝니다.\r\n  1. 펼침(기본) → 버튼을 누르면 **상단바만** 남습니다.\r\n  2. 상단바만 → 버튼을 한 번 더 누르면 **작은 아이콘만** 남습니다.\r\n  3. 아이콘 → 아이콘을 누르면 다시 **펼침**으로 돌아옵니다.\r\n- 접은 상태는 저장되어, 파티 찾기 창을 다시 열거나 게임을 다시 켜도 그대로 유지됩니다."
     },
     {
         "Author": "Dain-queen",
