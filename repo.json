@@ -234,7 +234,7 @@
         "Author": "Dain-queen",
         "Name": "AutoDismount",
         "InternalName": "AutoDismount",
-        "AssemblyVersion": "1.0.0.0",
+        "AssemblyVersion": "1.0.0.1",
         "Description": "탈것에 탄 상태에서 탈것 위에서는 못 쓰는 스킬을 누르면, 자동으로 하차한 뒤 누른 스킬을 이어서 사용합니다.\n비행 중이면 착지한 다음 내려서 사용합니다. 탈것 위에서도 쓸 수 있는 행동(텔레포, 귀환, 질주 등)은 건드리지 않습니다.\n명령어: /adm (설정 창: /adm config)",
         "ApplicableVersion": "any",
         "Tags": [
@@ -254,9 +254,9 @@
         "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoDismount/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoDismount/latest.zip",
         "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/AutoDismount/latest.zip",
-        "TestingAssemblyVersion": "1.0.0.0",
+        "TestingAssemblyVersion": "1.0.0.1",
         "IsTestingExclusive": false,
-        "LastUpdate": 1795317379,
-        "Changelog": "- 첫 버전. Daily Routines의 자동 하차 모듈을 대신하는 단독 플러그인.\r\n- 탈것을 탄 채로 탈것 위에서 못 쓰는 스킬을 누르면 자동으로 내리고, 누른 스킬을 이어서 사용합니다.\r\n- 비행 중이면 착지할 때까지 내리기를 반복하고, 내린 뒤 스킬을 사용합니다.\r\n- 텔레포·귀환처럼 탈것 위에서도 쓸 수 있는 행동은 건드리지 않습니다.\r\n- 설정 창(`/adm config`)과 명령어 `/adm` 추가 (켜기/끄기, item, fly, use, timeout, debug)."
+        "LastUpdate": 1795318357,
+        "Changelog": "- 내려도 못 쓰는 스킬이면 내리지 않게 수정. 재사용 대기 중, MP·게이지 부족, 대상 없음/맞지 않는 대상, 사거리·시야 밖, 아이템이 없을 때는 탄 채로 둡니다.\r\n- 설정 창에 \"쓸 수 있는 스킬일 때만 내리기\"(기본 켜짐) 추가, 명령어 `/adm check`로도 켜고 끌 수 있습니다.\r\n- 진단 메시지(`/adm debug`)에 안 내린 이유를 표시합니다."
     }
 ]
