@@ -29,6 +29,7 @@ PLUGINS = [
     ("AutoMahjongKR", None),
     ("ItemBatchUse", None),
     ("AutoDismount", None),
+    ("InstantTeleport", None),
 ]
 
 

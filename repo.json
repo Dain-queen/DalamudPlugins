@@ -258,5 +258,34 @@
         "IsTestingExclusive": false,
         "LastUpdate": 1795318585,
         "Changelog": "- 탈것을 탄 채 대상에게 스킬을 쓰면 게임이 꺼지던 문제 수정. 사거리 확인을 게임 함수 대신 거리 계산으로 바꿨습니다. (시야 확인은 빠졌습니다.)"
+    },
+    {
+        "Author": "Dain-queen",
+        "Name": "InstantTeleport",
+        "InternalName": "InstantTeleport",
+        "AssemblyVersion": "1.0.0.0",
+        "Description": "현재 지역의 돌발 임무, 비상 임무(초승달 섬·보즈야 등), 지도 표식(에테라이트·NPC·출입구), 주변 NPC·오브젝트, 지도 깃발, 대상, 마우스 위치, 직접 저장한 지점으로 바로 순간이동합니다.\n특수 인스턴스(초승달 섬, 남부 보즈야 전선, 에우레카 등)에서도 동작합니다.\n명령어: /itp (창 열기), /itp help (명령어 목록)",
+        "ApplicableVersion": "any",
+        "Tags": [
+            "teleport",
+            "순간이동",
+            "텔레포",
+            "fate",
+            "utility"
+        ],
+        "DalamudApiLevel": 15,
+        "LoadRequiredState": 0,
+        "LoadSync": false,
+        "CanUnloadAsync": false,
+        "LoadPriority": 0,
+        "Punchline": "돌발 임무·비상 임무·NPC·에테라이트·깃발 위치로 바로 순간이동 (특수 인스턴스 포함)",
+        "AcceptsFeedback": false,
+        "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/InstantTeleport/latest.zip",
+        "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/InstantTeleport/latest.zip",
+        "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/InstantTeleport/latest.zip",
+        "TestingAssemblyVersion": "1.0.0.0",
+        "IsTestingExclusive": false,
+        "LastUpdate": 1795323126,
+        "Changelog": "- 첫 버전. Daily Routines 순간이동 기능을 대신하는 단독 플러그인으로, 특수 인스턴스(초승달 섬·보즈야·에우레카 등)에서도 동작합니다.\r\n- 돌발 임무, 비상 임무(CE), 퀘스트·이벤트 표식, 지도 표식(에테라이트·NPC·출입구), 주변 NPC·오브젝트, 저장한 지점으로 순간이동.\r\n- 깃발·대상·마우스 위치·좌표·직전 위치로 이동, 지면으로 내려가기.\r\n- 높이를 모르는 목적지는 지형 데이터를 불러와 지면 높이를 찾아서 이동.\r\n- Daily Routines \"빠른 전송 패널\"에 저장한 지점 가져오기.\r\n- 명령어 `/itp` (`/itp help`로 목록)."
     }
 ]
