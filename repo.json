@@ -263,7 +263,7 @@
         "Author": "Dain-queen",
         "Name": "InstantTeleport",
         "InternalName": "InstantTeleport",
-        "AssemblyVersion": "1.2.1.0",
+        "AssemblyVersion": "1.3.0.0",
         "Description": "현재 지역의 돌발 임무, 비상 임무(초승달 섬·보즈야 등), 지도 표식(에테라이트·NPC·출입구), 주변 NPC·오브젝트, 지도 깃발, 대상, 마우스 위치, 직접 저장한 지점으로 바로 순간이동합니다.\n특수 인스턴스(초승달 섬, 남부 보즈야 전선, 에우레카 등)에서도 동작합니다.\n명령어: /itp (창 열기), /itp help (명령어 목록)",
         "ApplicableVersion": "any",
         "Tags": [
@@ -283,9 +283,9 @@
         "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/InstantTeleport/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/InstantTeleport/latest.zip",
         "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/InstantTeleport/latest.zip",
-        "TestingAssemblyVersion": "1.2.1.0",
+        "TestingAssemblyVersion": "1.3.0.0",
         "IsTestingExclusive": false,
-        "LastUpdate": 1795325948,
-        "Changelog": "- 창을 열어두면 게임이 꺼지던 문제 수정. 비상 임무·퀘스트·이벤트 표식의 이름을 읽을 때 이미 지워진 메모리를 읽는 경우가 있었습니다.\r\n  이제 표식 이름은 게임 데이터(지명)에서 가져오고, 이름이 없으면 \"표식 (아이콘 번호)\"로 표시합니다."
+        "LastUpdate": 1795328633,
+        "Changelog": "- **자동 이동** 추가: 창 맨 위 \"자동 이동\" 칸에서 원하는 돌발·비상 임무를 체크해 두면, 그게 생겼을 때 자동으로 그곳으로 이동합니다.\r\n  - 체크 목록에는 이 지역에서 한 번이라도 본 돌발·비상 임무가 저절로 쌓입니다. 아직 못 본 것은 이름(일부만 써도 됨)으로 직접 추가할 수 있습니다.\r\n  - 같은 돌발에는 한 번만 갑니다. 여러 개가 동시에 뜨면 가까운 곳부터 갑니다.\r\n  - 전투 중에는 기다리기(기본 켜짐), 체크한 돌발에 참여 중이면 끝날 때까지 기다리기(기본 켜짐).\r\n  - 이동 방식은 수동과 같습니다. 필드는 순간이동, 특수 인스턴스는 vnavmesh로 걸어서(탈것 옵션도 적용).\r\n  - 명령어 `/itp auto` (켜기/끄기), `/itp auto on`, `/itp auto off`.\r\n- 비상 임무 목록 다시 표시 (접수·준비·전투 상태와 남은 시간). 이름은 게임 데이터에서 가져옵니다."
     }
 ]
