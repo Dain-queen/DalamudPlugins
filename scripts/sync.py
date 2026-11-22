@@ -28,6 +28,7 @@ PLUGINS = [
     ("GatherBuddyReborn-KR", "GatherBuddy Reborn (한글)"),
     ("AutoMahjongKR", None),
     ("ItemBatchUse", None),
+    ("AutoDismount", None),
 ]
 
 
