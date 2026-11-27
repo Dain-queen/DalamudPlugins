@@ -287,5 +287,25 @@
     "IsTestingExclusive": false,
     "LastUpdate": 1795727809,
     "Changelog": "- 지름길(데존 → 데존석 → 에테라이트) 동작 수정.\r\n  - 탈것에 탄 채로 에테라이트에 말을 걸어 메뉴가 안 열리던 문제: 먼저 탈것에서 내린 뒤 말을 겁니다. 데존을 쓰기 전에도 내립니다.\r\n  - 데존이 바로 안 눌리면(이동 직후 등) 몇 번 다시 누르고, 그래도 안 되면 데존석, 그것도 안 되면 가장 가까운 에테라이트로 가는 순서대로 넘어갑니다.\r\n  - 에테라이트 메뉴를 기다리는 시간을 12초로 늘리고, 2초마다 다시 말을 겁니다.\r\n  - 각 단계를 로그에 남깁니다 (`/xllog`에서 \"[지름길]\"로 검색)."
+  },
+  {
+    "Name": "vnavmesh CN",
+    "InternalName": "vnavmesh",
+    "AssemblyVersion": "100.9.5.0",
+    "Author": "veyn, AtmoOmen",
+    "Punchline": "vnavmesh CN (AtmoOmen) — 원본 vnavmesh에 지워지지 않게 버전 번호만 올린 사본",
+    "Description": "不仅会自动寻路，还能自动避障。\n\nAtmoOmen의 vnavmesh CN 0.9.5.0을 그대로 담고, 버전 번호만 100.9.5.0으로 올렸습니다.\nCN판이 업데이트되면 자동으로 따라 올라갑니다.",
+    "ApplicableVersion": "any",
+    "AcceptsFeedback": true,
+    "DalamudApiLevel": 15,
+    "RepoUrl": "https://github.com/AtmoOmen/ffxiv_navmesh-cn",
+    "IconUrl": "https://raw.githubusercontent.com/AtmoOmen/ffxiv_navmesh-cn/CN/Resources/icon2.png",
+    "TestingAssemblyVersion": "100.9.5.0",
+    "IsTestingExclusive": false,
+    "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/vnavmesh/latest.zip",
+    "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/vnavmesh/latest.zip",
+    "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/vnavmesh/latest.zip",
+    "LastUpdate": 1795760813,
+    "CnVersion": "0.9.5.0"
   }
 ]
