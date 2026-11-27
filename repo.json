@@ -263,7 +263,7 @@
     "Author": "Dain-queen",
     "Name": "InstantTeleport",
     "InternalName": "InstantTeleport",
-    "AssemblyVersion": "1.7.0.0",
+    "AssemblyVersion": "1.7.1.0",
     "Description": "현재 지역의 돌발 임무, 비상 임무(초승달 섬·보즈야 등), 지도 표식(에테라이트·NPC·출입구), 주변 NPC·오브젝트, 지도 깃발, 대상, 마우스 위치, 직접 저장한 지점으로 바로 순간이동합니다.\n특수 인스턴스(초승달 섬, 남부 보즈야 전선, 에우레카 등)에서도 동작합니다.\n명령어: /itp (창 열기), /itp help (명령어 목록)",
     "ApplicableVersion": "any",
     "Tags": [
@@ -283,9 +283,9 @@
     "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/InstantTeleport/latest.zip",
     "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/InstantTeleport/latest.zip",
     "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/InstantTeleport/latest.zip",
-    "TestingAssemblyVersion": "1.7.0.0",
+    "TestingAssemblyVersion": "1.7.1.0",
     "IsTestingExclusive": false,
-    "LastUpdate": 1795727369,
-    "Changelog": "- 탈것 옵션을 **이동할 때 항상 탈것 타기**로 바꿈 (새로 설치하면 기본 켜짐).\r\n  - 출발할 때뿐 아니라 이동 중에 탈것에서 내려져 있으면(에테라이트 이동 직후, 공격받아 내려졌을 때 등) 잠깐 멈추고 다시 탄 뒤 이어서 갑니다.\r\n  - 전투 중이거나 탈것을 못 타는 곳이면 그냥 걸어갑니다. 한 번 이동하는 동안 세 번 실패하면 그 이동에서는 더 타려고 하지 않습니다.\r\n  - 남은 거리가 설정한 거리(기본 30y)보다 짧으면 타지 않습니다."
+    "LastUpdate": 1795727524,
+    "Changelog": "- 이동 중에 자동 모드를 정지했다가 다시 시작하면, 가던 돌발을 다녀온 것으로 쳐서 다시 가지 않던 문제 수정.\r\n  - 이제 \"다녀온 곳\"은 실제로 범위 안에 들어갔거나 진행도 때문에 포기한 곳만입니다.\r\n  - 가다가 멈춘 곳은 다시 시작하면 바로 다시 갈 수 있습니다. 가다가 길을 못 찾는 등으로 끝난 곳은 30초 뒤에 다시 고릅니다."
   }
 ]
