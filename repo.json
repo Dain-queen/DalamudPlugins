@@ -263,7 +263,7 @@
     "Author": "Dain-queen",
     "Name": "InstantTeleport",
     "InternalName": "InstantTeleport",
-    "AssemblyVersion": "1.3.1.0",
+    "AssemblyVersion": "1.4.0.0",
     "Description": "현재 지역의 돌발 임무, 비상 임무(초승달 섬·보즈야 등), 지도 표식(에테라이트·NPC·출입구), 주변 NPC·오브젝트, 지도 깃발, 대상, 마우스 위치, 직접 저장한 지점으로 바로 순간이동합니다.\n특수 인스턴스(초승달 섬, 남부 보즈야 전선, 에우레카 등)에서도 동작합니다.\n명령어: /itp (창 열기), /itp help (명령어 목록)",
     "ApplicableVersion": "any",
     "Tags": [
@@ -283,9 +283,9 @@
     "DownloadLinkInstall": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/InstantTeleport/latest.zip",
     "DownloadLinkUpdate": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/InstantTeleport/latest.zip",
     "DownloadLinkTesting": "https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/plugins/InstantTeleport/latest.zip",
-    "TestingAssemblyVersion": "1.3.1.0",
+    "TestingAssemblyVersion": "1.4.0.0",
     "IsTestingExclusive": false,
-    "LastUpdate": 1795337528,
-    "Changelog": "- 창 위쪽에 지금 하고 있는 일을 항상 노란 글씨로 표시합니다.\r\n  - `이동 중: 돌발 이름 (길 찾는 중 / 탈것 타는 중 / 남은 거리 120y)`\r\n  - `전투 중: 돌발 이름` / `참여 중: 돌발 이름` — 뒤에 `· 다음: 돌발 이름`이 붙으면 끝나고 자동으로 갈 곳\r\n  - `대기 중 (체크한 N곳 감시 중)` / `대기 중 (자동 이동 꺼짐)`"
+    "LastUpdate": 1795725215,
+    "Changelog": "- 창 맨 위에 **자동 모드 시작 / 정지** 버튼 추가. 명령어는 `/itp start`, `/itp stop` (`/itp auto`는 전환)입니다.\r\n  - 정지하면 자동 이동, 자동 공격, 진행 중인 이동을 모두 멈춥니다.\r\n- **돌발 자동 공격 (Wrath Combo 연동)**: 돌발·비상 임무 범위에 들어가면 그 돌발 몹 중 가장 가까운 것을 대상으로 잡고 Wrath Combo 자동 회전을 켭니다.\r\n  - 지금 잡은 대상이 살아 있으면 바꾸지 않고, 쓰러지면 다음으로 가까운 몹을 잡습니다.\r\n  - 몹이 공격 거리 밖이면 vnavmesh로 다가갑니다. 거리는 직업에 맞게 자동으로 정하거나(탱커·근거리 2.5y, 원거리·힐러 20y) 직접 정할 수 있습니다.\r\n  - 돌발 밖으로 나와 전투가 끝나면 자동 회전을 끕니다. 정지하면 Wrath Combo 설정을 원래대로 돌려놓습니다.\r\n  - Wrath Combo가 꺼져 있으면 대상만 잡습니다.\r\n- 상태 표시에 `전투 중: 돌발 이름 · 공격 중: 몹 이름`, `몹 찾는 중`, `다가가는 중`이 나옵니다."
   }
 ]
