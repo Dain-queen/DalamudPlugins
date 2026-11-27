@@ -25,10 +25,21 @@ https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/repo.json
 | GatherBuddy Reborn (한글) | GatherBuddy Reborn UI 한국어 번역판 |
 | AutoMahjongKR | 도마 마작 자동 타패·리치·쯔모 / 버릴 패 추천 |
 | ItemBatchUse | 소지품 우클릭 → 일괄 사용 (상자 여러 개 한 번에 열기) |
+| AutoDismount | 탈것을 탄 채 스킬을 쓰면 자동으로 내리고 그 스킬 사용 |
+| InstantTeleport | 돌발·비상 임무·NPC·에테라이트로 이동, 자동 모드(자동 이동·돌발 자동 공격) |
+| vnavmesh CN | AtmoOmen의 vnavmesh CN 사본 (아래 참고) |
+
+### vnavmesh CN
+
+원본 vnavmesh(1.x)와 CN판(0.x)은 내부 이름이 같아서, Dalamud가 버전이 높은 원본만 남기고 CN판을 지웁니다.
+그래서 CN판 내용은 그대로 두고 **버전 번호 앞자리에 100을 더한 사본**(예: 0.9.5.0 → 100.9.5.0)을 올립니다. 이러면 항상 CN판이 남습니다.
+GitHub Actions(`vnavmesh CN 따라가기`)가 3시간마다 AtmoOmen 저장소를 확인해서, CN판이 업데이트되면 자동으로 따라 올립니다.
+직접 확인하려면 `python3 scripts/vnavmesh_cn.py`를 실행합니다.
 
 ## 갱신 (관리용)
 
 각 플러그인 비공개 저장소의 최신 Releases zip 을 받아 `plugins/` 와 `repo.json` 을 다시 만듭니다.
+스크립트가 관리하지 않는 항목(vnavmesh CN)과 이번에 릴리스를 못 읽은 항목은 기존 `repo.json` 내용을 그대로 남깁니다.
 
 ```
 python3 scripts/sync.py

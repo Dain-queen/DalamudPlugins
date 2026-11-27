@@ -86,6 +86,19 @@ def main():
         entries.append(entry)
         print(f"ok {repo}: {internal} {manifest['AssemblyVersion']}")
 
+    # 이 스크립트가 관리하지 않는 항목(vnavmesh CN 자동 미러 등)과
+    # 이번에 릴리스를 못 읽은 항목은 기존 repo.json 에 있던 그대로 남긴다.
+    # (목록에서 플러그인을 빼려면 repo.json 에서 직접 지울 것)
+    done = {e["InternalName"] for e in entries}
+    try:
+        with open(os.path.join(ROOT, "repo.json"), encoding="utf-8-sig") as f:
+            for old in json.load(f):
+                if old.get("InternalName") not in done:
+                    entries.append(old)
+                    done.add(old.get("InternalName"))
+    except FileNotFoundError:
+        pass
+
     with open(os.path.join(ROOT, "repo.json"), "w", encoding="utf-8") as f:
         json.dump(entries, f, ensure_ascii=False, indent=2)
         f.write("\n")
