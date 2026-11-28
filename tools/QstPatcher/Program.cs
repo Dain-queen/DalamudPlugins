@@ -11,6 +11,7 @@
 // 사용: dotnet run --project tools/QstPatcher -- <입력 Questionable.dll> <출력 Questionable.dll>
 using Mono.Cecil;
 using Mono.Cecil.Cil;
+using Mono.Cecil.Rocks;
 
 if (args.Length != 2)
 {
