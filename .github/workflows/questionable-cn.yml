@@ -1,0 +1,50 @@
+name: Questionable CN 호환판 따라가기
+
+# puni.sh의 Questionable이 업데이트되면, vnavmesh CN을 인식하게 패치한 사본을 이 저장소에 올린다.
+# (Questionable이 vnavmesh를 표시 이름으로 찾아서 "vnavmesh CN"을 못 알아보는 문제 수정)
+
+on:
+  schedule:
+    - cron: '47 */3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: questionable-cn
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Questionable 새 버전 확인 및 패치
+        run: python3 scripts/questionable_cn.py
+
+      - name: 바뀌었으면 올리기
+        run: |
+          if git diff --quiet && [ -z "$(git status --porcelain plugins/Questionable)" ]; then
+            echo "변경 없음"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          ver=$(python3 -c "import json;print(next(e['AssemblyVersion'] for e in json.load(open('repo.json',encoding='utf-8-sig')) if e['InternalName']=='Questionable'))")
+          git add repo.json plugins/Questionable/latest.zip
+          git commit -m "Questionable CN 호환판 ${ver}"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          exit 1

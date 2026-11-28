@@ -28,6 +28,7 @@ https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/repo.json
 | AutoDismount | 탈것을 탄 채 스킬을 쓰면 자동으로 내리고 그 스킬 사용 |
 | InstantTeleport | 돌발·비상 임무·NPC·에테라이트로 이동, 자동 모드(자동 이동·돌발 자동 공격) |
 | vnavmesh CN | AtmoOmen의 vnavmesh CN 사본 (아래 참고) |
+| Questionable (vnavmesh CN 호환) | puni.sh Questionable에서 vnavmesh CN도 인식하게 한 곳만 고친 사본 (아래 참고) |
 
 ### vnavmesh CN
 
@@ -36,10 +37,19 @@ https://raw.githubusercontent.com/Dain-queen/DalamudPlugins/main/repo.json
 GitHub Actions(`vnavmesh CN 따라가기`)가 3시간마다 AtmoOmen 저장소를 확인해서, CN판이 업데이트되면 자동으로 따라 올립니다.
 직접 확인하려면 `python3 scripts/vnavmesh_cn.py`를 실행합니다.
 
+### Questionable (vnavmesh CN 호환)
+
+Questionable은 vnavmesh를 **표시 이름**(`Name == "vnavmesh"`)으로 찾습니다. CN판은 표시 이름이 `vnavmesh CN`이라 못 찾고,
+길찾기가 계속 "준비 안 됨"으로 남아 캐릭터가 움직이지 않습니다. (CN판 이름을 바꾸면 Daily Routines가 CN판을 못 알아봅니다.)
+그래서 `IPCUtils.IPCSubscriber.Version()`의 비교식만 `(표시 이름 == name || 내부 이름 == name)`으로 고칩니다. 원래 조건을 포함하므로 다른 연동은 그대로입니다.
+패치는 `tools/QstPatcher`(Mono.Cecil)가 하고, 버전은 vnavmesh CN 사본처럼 앞자리에 100을 더합니다 (15.756.3.64 → 115.756.3.64).
+GitHub Actions(`Questionable CN 호환판 따라가기`)가 3시간마다 puni.sh를 확인해서 원본이 업데이트되면 자동으로 따라 올립니다.
+원본 소스: https://github.com/PunishXIV/Questionable (AGPL-3.0). 패치 도구 소스는 이 저장소에 있습니다.
+
 ## 갱신 (관리용)
 
 각 플러그인 비공개 저장소의 최신 Releases zip 을 받아 `plugins/` 와 `repo.json` 을 다시 만듭니다.
-스크립트가 관리하지 않는 항목(vnavmesh CN)과 이번에 릴리스를 못 읽은 항목은 기존 `repo.json` 내용을 그대로 남깁니다.
+스크립트가 관리하지 않는 항목(vnavmesh CN, Questionable)과 이번에 릴리스를 못 읽은 항목은 기존 `repo.json` 내용을 그대로 남깁니다.
 
 ```
 python3 scripts/sync.py
