@@ -32,7 +32,7 @@ jobs:
       - name: Dalamud 참조 DLL 받기 (패치 저장용)
         run: |
           mkdir -p "$RUNNER_TEMP/dalamud"
-          curl -sSfL https://goatcorp.github.io/dalamud-distrib/latest.zip -o "$RUNNER_TEMP/dalamud.zip"
+          curl -SfL --retry 3 https://raw.githubusercontent.com/goatcorp/dalamud-distrib/main/latest.zip -o "$RUNNER_TEMP/dalamud.zip"
           unzip -q "$RUNNER_TEMP/dalamud.zip" -d "$RUNNER_TEMP/dalamud"
 
       - name: Questionable 새 버전 확인 및 패치
