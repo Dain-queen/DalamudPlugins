@@ -23,6 +23,11 @@ import time
 import urllib.request
 import zipfile
 
+# puni.sh 의 Questionable zip 에는 CRC 값이 틀리게 적힌 항목이 있다(Microsoft.Extensions.Primitives.dll 등).
+# Dalamud 는 CRC 를 따지지 않고 설치하므로, 여기서도 CRC 검사는 끄고 바이트를 그대로 옮긴다.
+# 대신 압축 해제한 크기가 zip 에 적힌 크기와 같은지는 read_entry() 에서 확인한다.
+zipfile.ZipExtFile._update_crc = lambda self, newdata: None  # type: ignore[assignment]
+
 UPSTREAM = "https://love.puni.sh/ment.json"
 OWNER = "Dain-queen"
 PUBLIC_REPO = "DalamudPlugins"
@@ -48,10 +53,23 @@ def bump(version: str) -> str:
     return ".".join(str(p) for p in parts[:4])
 
 
+def read_entry(z: zipfile.ZipFile, info: zipfile.ZipInfo) -> bytes:
+    data = z.read(info)
+    if len(data) != info.file_size:
+        raise RuntimeError(f"zip 항목 크기가 다름: {info.filename} ({len(data)} != {info.file_size})")
+    return data
+
+
 def patch_dll(data: bytes, plugin_zip: zipfile.ZipFile) -> bytes:
     with tempfile.TemporaryDirectory() as tmp:
         refs = os.path.join(tmp, "refs")
-        plugin_zip.extractall(refs)  # 같이 들어있는 ECommons 등 참조 DLL
+        for info in plugin_zip.infolist():  # 같이 들어있는 ECommons 등 참조 DLL
+            if info.is_dir():
+                continue
+            path = os.path.join(refs, *info.filename.split("/"))
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            with open(path, "wb") as f:
+                f.write(read_entry(plugin_zip, info))
         src = os.path.join(tmp, "in.dll")
         dst = os.path.join(tmp, "out.dll")
         with open(src, "wb") as f:
@@ -92,7 +110,7 @@ def main() -> int:
     found_dll = False
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as dst:
         for info in src_zip.infolist():
-            content = src_zip.read(info.filename)
+            content = read_entry(src_zip, info)
             name = info.filename
             if "/" not in name and name.endswith(".json") and not name.endswith(".deps.json"):
                 try:
