@@ -68,8 +68,13 @@ def patch_dll(data: bytes, plugin_zip: zipfile.ZipFile) -> bytes:
                 continue
             path = os.path.join(refs, *info.filename.split("/"))
             os.makedirs(os.path.dirname(path), exist_ok=True)
+            try:
+                content = read_entry(plugin_zip, info)
+            except RuntimeError as e:
+                print(f"참조용 압축 해제 건너뜀: {e}")
+                continue
             with open(path, "wb") as f:
-                f.write(read_entry(plugin_zip, info))
+                f.write(content)
         src = os.path.join(tmp, "in.dll")
         dst = os.path.join(tmp, "out.dll")
         with open(src, "wb") as f:
@@ -105,34 +110,45 @@ def main() -> int:
 
     data = fetch(src["DownloadLinkInstall"])
     src_zip = zipfile.ZipFile(io.BytesIO(data))
-    out = io.BytesIO()
-    found_manifest = False
-    found_dll = False
-    with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as dst:
-        for info in src_zip.infolist():
-            content = read_entry(src_zip, info)
-            name = info.filename
-            if "/" not in name and name.endswith(".json") and not name.endswith(".deps.json"):
-                try:
-                    manifest = json.loads(content.decode("utf-8-sig"))
-                except Exception:
-                    manifest = None
-                if isinstance(manifest, dict) and manifest.get("InternalName") == INTERNAL:
-                    manifest["AssemblyVersion"] = version
-                    content = json.dumps(manifest, ensure_ascii=False, indent=2).encode("utf-8")
-                    found_manifest = True
-            elif name == "Questionable.dll":
-                content = patch_dll(content, src_zip)
-                found_dll = True
-            dst.writestr(info, content)
 
-    if not (found_manifest and found_dll):
-        print(f"!! zip 안에서 매니페스트({found_manifest}) 또는 Questionable.dll({found_dll})을 찾지 못함", file=sys.stderr)
+    manifest_name = None
+    new_manifest = None
+    new_dll = None
+    for info in src_zip.infolist():
+        name = info.filename
+        if "/" not in name and name.endswith(".json") and not name.endswith(".deps.json"):
+            try:
+                manifest = json.loads(read_entry(src_zip, info).decode("utf-8-sig"))
+            except Exception:
+                manifest = None
+            if isinstance(manifest, dict) and manifest.get("InternalName") == INTERNAL:
+                manifest["AssemblyVersion"] = version
+                new_manifest = json.dumps(manifest, ensure_ascii=False, indent=2).encode("utf-8")
+                manifest_name = name
+        elif name == "Questionable.dll":
+            new_dll = patch_dll(read_entry(src_zip, info), src_zip)
+
+    if new_manifest is None or new_dll is None:
+        print(f"!! zip 안에서 매니페스트({new_manifest is not None}) 또는 Questionable.dll({new_dll is not None})을 찾지 못함",
+              file=sys.stderr)
         return 1
 
+    # 원본 zip 을 다시 압축하지 않고 두 항목만 바꿔 끼운다 (나머지는 바이트 그대로).
+    # puni.sh zip 에는 깨진 항목이 있어서 파이썬으로 풀었다 다시 묶으면 그 파일이 망가진다.
     os.makedirs(os.path.dirname(zip_path), exist_ok=True)
+    with tempfile.TemporaryDirectory() as tmp:
+        out_zip = os.path.join(tmp, "out.zip")
+        with open(out_zip, "wb") as f:
+            f.write(data)
+        with open(os.path.join(tmp, "Questionable.dll"), "wb") as f:
+            f.write(new_dll)
+        with open(os.path.join(tmp, manifest_name), "wb") as f:
+            f.write(new_manifest)
+        subprocess.run(["zip", "-q", "-X", out_zip, "Questionable.dll", manifest_name], cwd=tmp, check=True)
+        with open(out_zip, "rb") as f:
+            result = f.read()
     with open(zip_path, "wb") as f:
-        f.write(out.getvalue())
+        f.write(result)
 
     link = f"{RAW}/plugins/{INTERNAL}/latest.zip"
     entry = {k: v for k, v in src.items() if k not in ("DownloadLinkInstall", "DownloadLinkUpdate", "DownloadLinkTesting")}
