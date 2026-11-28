@@ -11,7 +11,7 @@
     (15.756.3.64 → 115.756.3.64)
 
 GitHub Actions(.github/workflows/questionable-cn.yml)가 3시간마다 실행한다. .NET 8 SDK가 필요하다.
-직접 실행: python3 scripts/questionable_cn.py
+직접 실행: DALAMUD_DIR=<Dalamud 배포본 폴더> python3 scripts/questionable_cn.py
 """
 import io
 import json
@@ -48,14 +48,18 @@ def bump(version: str) -> str:
     return ".".join(str(p) for p in parts[:4])
 
 
-def patch_dll(data: bytes) -> bytes:
+def patch_dll(data: bytes, plugin_zip: zipfile.ZipFile) -> bytes:
     with tempfile.TemporaryDirectory() as tmp:
+        refs = os.path.join(tmp, "refs")
+        plugin_zip.extractall(refs)  # 같이 들어있는 ECommons 등 참조 DLL
         src = os.path.join(tmp, "in.dll")
         dst = os.path.join(tmp, "out.dll")
         with open(src, "wb") as f:
             f.write(data)
+        ref_dirs = [refs] + [d for d in os.environ.get("DALAMUD_DIR", "").split(os.pathsep) if d]
+        env = dict(os.environ, QST_REF_DIRS=os.pathsep.join(ref_dirs))
         project = os.path.join(ROOT, "tools", "QstPatcher")
-        subprocess.run(["dotnet", "run", "-c", "Release", "--project", project, "--", src, dst], check=True)
+        subprocess.run(["dotnet", "run", "-c", "Release", "--project", project, "--", src, dst], check=True, env=env)
         with open(dst, "rb") as f:
             return f.read()
 
@@ -100,7 +104,7 @@ def main() -> int:
                     content = json.dumps(manifest, ensure_ascii=False, indent=2).encode("utf-8")
                     found_manifest = True
             elif name == "Questionable.dll":
-                content = patch_dll(content)
+                content = patch_dll(content, src_zip)
                 found_dll = True
             dst.writestr(info, content)
 

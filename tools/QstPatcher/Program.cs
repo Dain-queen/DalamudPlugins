@@ -22,7 +22,15 @@ if (args.Length != 2)
 var input = args[0];
 var output = args[1];
 
-using var asm = AssemblyDefinition.ReadAssembly(input, new ReaderParameters { ReadSymbols = false, InMemory = true });
+// 저장할 때 참조 어셈블리(Dalamud, ECommons 등)를 찾아야 하므로 검색 경로를 넣는다.
+// QST_REF_DIRS: 경로 목록(Path.PathSeparator 로 구분) — 플러그인 zip 압축 해제 폴더, Dalamud 배포본 폴더
+var resolver = new DefaultAssemblyResolver();
+resolver.AddSearchDirectory(Path.GetDirectoryName(Path.GetFullPath(input))!);
+foreach (var dir in (Environment.GetEnvironmentVariable("QST_REF_DIRS") ?? "").Split(Path.PathSeparator, StringSplitOptions.RemoveEmptyEntries))
+    foreach (var sub in Directory.EnumerateDirectories(dir, "*", SearchOption.AllDirectories).Prepend(dir))
+        resolver.AddSearchDirectory(sub);
+
+using var asm = AssemblyDefinition.ReadAssembly(input, new ReaderParameters { ReadSymbols = false, InMemory = true, AssemblyResolver = resolver });
 var module = asm.MainModule;
 
 static IEnumerable<TypeDefinition> AllTypes(IEnumerable<TypeDefinition> types)
